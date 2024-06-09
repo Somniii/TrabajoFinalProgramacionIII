@@ -4,6 +4,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+
+    }
+    public static void probarTorneo(Scanner scan){
         Torneo torneito = new Torneo();
         for (int id = 1; id <= 8; id++) {
             Participante participante = new Participante("Juan");

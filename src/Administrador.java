@@ -2,7 +2,6 @@ public class Administrador {
     private static int nextId = 20000000;
     private final int id;
     private String nombre;
-    private Torneo torneoActual;
     /*COMENTARIO:Esta clase administrador solo permite un torneo por un administrador , luego se puede cambiar pero solo uno
     Si la compania quiere realizar mas torneo la tenemos que cambiar por un List , pero en el MVP lo dejamos asi
     */
@@ -12,11 +11,6 @@ public class Administrador {
     public Administrador(String nombre){
         this.id = nextId++;
         this.nombre = nombre;
-    }
-    public Administrador(String nombre, Torneo torneoActual){
-        this.id = nextId++;
-        this.nombre = nombre;
-        this.torneoActual = torneoActual;
     }
 
     public static int getNextId() {
@@ -39,13 +33,6 @@ public class Administrador {
         this.nombre = nombre;
     }
 
-    public Torneo getTorneoActual() {
-        return torneoActual;
-    }
-
-    public void setTorneoActual(Torneo torneoActual) {
-        this.torneoActual = torneoActual;
-    }
 
     public String toString(){
         return "Nombre = "+nombre+"\nId:"+id;

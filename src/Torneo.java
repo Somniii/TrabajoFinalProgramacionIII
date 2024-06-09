@@ -9,6 +9,7 @@ public class Torneo {
     private static int nextId = 30000000;
     private final int id;
     private String nombreTorneo;
+    private Administrador adm;
 
     public Torneo() {
         this.id = 30;
@@ -18,6 +19,22 @@ public class Torneo {
         this.listaEtapa = new ArrayList<>();
         this.id = nextId++;
         this.nombreTorneo = nombreTorneo;
+        this.adm = new Administrador();
+    }
+    public Torneo(String nombreTorneo , Administrador adm){
+        this.listaParticipante = new ArrayList<>();
+        this.listaEtapa = new ArrayList<>();
+        this.id = nextId++;
+        this.nombreTorneo = nombreTorneo;
+        this.adm = adm;
+    }
+
+    public Administrador getAdm() {
+        return adm;
+    }
+
+    public void setAdm(Administrador adm) {
+        this.adm = adm;
     }
 
     public int getId() {
