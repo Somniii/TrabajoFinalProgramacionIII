@@ -235,8 +235,12 @@ public class Torneo {
 
     public void pasarGanadorEtapa(){
         double tEtapaBaja = Math.pow(2,pisos);
+        if(pisos == 0){
+            System.out.println("Va a cargar y crear la etapa -1");
+        }
         setPisos(getPisos()-1);
         LocalDateTime fechaActual = LocalDateTime.now();
+        /*Carga los ganadores de la etapa anterior a la siguiente*/
         for(int i = 0 ; i < tEtapaBaja ; i= i+2){
                 Etapa e1Aux = listaEtapa.get(i);
                 Etapa e2Aux = listaEtapa.get(i+1);
@@ -280,7 +284,15 @@ public class Torneo {
 
         }
     }
-
+    public void eliminarEtapaNegativa() {
+        // Iterate in reverse order to avoid ConcurrentModificationException
+        for (int i = listaEtapa.size() - 1; i >= 0; i--) {
+            Etapa eAux = listaEtapa.get(i);
+            if (eAux.jerarquia == -1) {
+                listaEtapa.remove(i); // Remove the element at the current index
+            }
+        }
+    }
 
 
 }

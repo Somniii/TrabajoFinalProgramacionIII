@@ -23,6 +23,8 @@ public class Main {
         }
         torneito.mostrarGanadorTorneo();
         torneito.mostrarEtapas();
+        torneito.eliminarEtapaNegativa();
+        torneito.mostrarEtapas();
         torneito.mostrarPorEtapa(scan);
         torneito.mostrarPorEtapa(scan);
         ArrayParticipantes participantesHistoricos = new ArrayParticipantes();
