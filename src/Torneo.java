@@ -11,6 +11,7 @@ public class Torneo {
     private final int id;
     private String nombreTorneo;
     private Administrador adm;
+    private Participante ganadorTorneo;
 
     public Torneo() {
         this.id = 30;
@@ -28,6 +29,14 @@ public class Torneo {
         this.id = nextId++;
         this.nombreTorneo = nombreTorneo;
         this.adm = adm;
+    }
+
+    public Participante getGanadorTorneo() {
+        return ganadorTorneo;
+    }
+
+    public void setGanadorTorneo(Participante ganadorTorneo) {
+        this.ganadorTorneo = ganadorTorneo;
     }
 
     public Administrador getAdm() {
@@ -166,26 +175,43 @@ public class Torneo {
     }
     public void elegirGanador( Scanner scan){
         //System.out.println("Entra a el void elegirGanador");
-        if(pisos != 0){
+        //Si funciona loq ue estoy intentando tengoq ue cambiar el if de pisos , direcamtente quitar el if de la linea de abajo
+        if(pisos != 99){
             for(Etapa aux :listaEtapa){
                 //PONGO FECHA ACTUAL ACA POR SI ELIGE DE A UNO AL GANADO SOLO COPIA Y PEGA , SE QUE CONSUME MAS RECURSOS
                 LocalDateTime fechaActual = LocalDateTime.now();
+                System.out.println("ESTAMOS EN PISO: " +pisos);
+                mostrarEtapasPorCargaDePiso(pisos);
                 if(aux.jerarquia==pisos){
                     //System.out.println("Entra al for de elegirGanador");
                     Participante p2Aux = aux.getP2();
                     if(p2Aux.getNombre()!=null){
+                        System.out.println("En jerarquia "+aux.getJerarquia());
                         Participante p1 = aux.getP1();
                         Participante p2 = aux.getP2();
-                        System.out.println("Elija ganador:\n1."+p1.getNombre()+"/VS/2."+p2.getNombre());
+                        System.out.println("Elija ganador:\n1."+p1.getId()+"/VS/2."+p2.getId());
                         System.out.println("Elije 1 o 2");
                         int opcion = scan.nextInt();
-                        if(opcion == 1){
-                            aux.setGanador(aux.getP1());
-                        }else if(opcion == 2){
-                            aux.setGanador(aux.getP2());
+
+                        if(pisos == 0){
+                            if(opcion == 1){
+                                setGanadorTorneo(aux.getP1());
+                            }
+                            else if(opcion == 2){
+                                setGanadorTorneo(aux.getP2());
+                            }
+                            break;
                         }else{
+                            if(opcion == 1){
+                                aux.setGanador(aux.getP1());
+                            }else if(opcion == 2){
+                                aux.setGanador(aux.getP2());
+                        }
+
+                        }/*else{
                             System.out.println("Ingreso una opcion invalida");
                         }
+                        */
                         aux.setFechaGanador(fechaActual);
                     }else{
 
@@ -196,30 +222,31 @@ public class Torneo {
 
                 }
             }
+
             pasarGanadorEtapa();
 
         }
         else{
             System.out.println("YA EXISTE GANADOR DE TORNEO :ES:");
-            mostrarGanador();
+            mostrarGanadorTorneo();
         }
 
     }
-    //Anda
-    public void mostrarGanador(){
-        for(Etapa eAux : listaEtapa){
-            Participante pAux = eAux.getGanador();
-            System.out.println("ETAPA "+eAux.jerarquia+"|"+pAux.toString());
-        }
-    }
+
     public void pasarGanadorEtapa(){
-        int tEtapaBaja = listaEtapa.size();
+        double tEtapaBaja = Math.pow(2,pisos);
         setPisos(getPisos()-1);
         LocalDateTime fechaActual = LocalDateTime.now();
         for(int i = 0 ; i < tEtapaBaja ; i= i+2){
-            Etapa e1Aux = listaEtapa.get(i);
-            Etapa e2Aux = listaEtapa.get(i+1);
-            listaEtapa.add(new Etapa(e1Aux.getGanador(),e2Aux.getGanador(), getPisos(),fechaActual));
+                Etapa e1Aux = listaEtapa.get(i);
+                Etapa e2Aux = listaEtapa.get(i+1);
+                listaEtapa.add(new Etapa(e1Aux.getGanador(),e2Aux.getGanador(), getPisos(),fechaActual));
+        }
+    }
+    public void mostrarGanadorEtapas(){
+        for(Etapa eAux : listaEtapa){
+            Participante pAux = eAux.getGanador();
+            System.out.println("ETAPA "+eAux.jerarquia+"|"+pAux.toString());
         }
     }
     public void mostrarPorEtapa(Scanner scan){
@@ -238,10 +265,19 @@ public class Torneo {
         }
     }
     public void mostrarGanadorTorneo(){
+        System.out.println("GANADOR DEL TORNEO: "+ganadorTorneo.toString());
+    }
+    public void mostrarEtapasPorCargaDePiso(int buscar){
         for(Etapa eAux : listaEtapa){
-            if(eAux.getJerarquia() == 0){
-                System.out.println("GANADOR TORNEO:\n"+eAux.toString());
+            if(eAux.getJerarquia()== buscar){
+                if(eAux.getP1() ==null || eAux.getP2()==null){
+                    break;
+                }
+                System.out.println(eAux.getP1().toString());
+                System.out.println(eAux.getP2().toString());
+                System.out.println("Jerarquia:"+eAux.jerarquia);
             }
+
         }
     }
 

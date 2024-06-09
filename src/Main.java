@@ -17,13 +17,14 @@ public class Main {
         }
         torneito.mostrarParticipantes();
         torneito.llenarEtapas();
-        while(torneito.getPisos()!=0){
+        while(torneito.getPisos()>=0){
+            System.out.println("ESTAMOS EN PISO:"+torneito.getPisos());
             torneito.elegirGanador(scan);
         }
+        torneito.mostrarGanadorTorneo();
+        torneito.mostrarEtapas();
         torneito.mostrarPorEtapa(scan);
-        torneito.elegirGanador(scan);
         torneito.mostrarPorEtapa(scan);
-        torneito.mostrarGanador();
         ArrayParticipantes participantesHistoricos = new ArrayParticipantes();
         participantesHistoricos.anadirParticipantes(torneito.getListaParticipante());
         participantesHistoricos.mostrarParticipantesHistoricos();
