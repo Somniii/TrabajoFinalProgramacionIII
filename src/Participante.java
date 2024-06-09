@@ -1,17 +1,14 @@
 public class Participante {
-    private int id;
-    public Participante(){
+    private static int nextId = 10000000;
 
-    }
-    public Participante(int id){
-        this.id = id;
+    private final int id;
+
+    public Participante(){
+        this.id = nextId++;
     }
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 }

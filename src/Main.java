@@ -5,7 +5,7 @@ public class Main {
 
         Torneo torneito = new Torneo();
         for (int id = 1; id <= 8; id++) {
-            Participante participante = new Participante(id);
+            Participante participante = new Participante();
             torneito.ingresarParticipante(participante);
         }
         torneito.mostrarParticipantes();
