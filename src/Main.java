@@ -11,15 +11,16 @@ public class Main {
         }
         torneito.mostrarParticipantes();
         torneito.llenarEtapas();
-        torneito.mostrarEtapas();
+        /*torneito.mostrarEtapas();
         torneito.mostrarPorEtapa(scan);
         torneito.elegirGanador(scan);
         torneito.pasarGanadorEtapa();
         torneito.mostrarPorEtapa(scan);
         torneito.elegirGanador(scan);
         torneito.mostrarPorEtapa(scan);
-        torneito.mostrarGanador();
-
-
+        torneito.mostrarGanador();*/
+        ArrayParticipantes participantesHistoricos = new ArrayParticipantes();
+        participantesHistoricos.anadirParticipantes(torneito.getListaParticipante());
+        participantesHistoricos.mostrarParticipantesHistoricos();
     }
 }
