@@ -1,3 +1,4 @@
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -118,7 +119,8 @@ public class Torneo {
         while(i<cantidadEtapasCuadradas){
             Participante aux1 = listaParticipante.get(i);
             Participante aux2 = new Participante();
-            listaEtapa.add(new Etapa(aux1 ,aux2 , contador));
+            LocalDateTime fechaActual = LocalDateTime.now();
+            listaEtapa.add(new Etapa(aux1 ,aux2 , contador, fechaActual));
             //System.out.println("Coloca el id:"+aux1.getId());
             i++;
         }
@@ -160,6 +162,8 @@ public class Torneo {
     public void elegirGanador( Scanner scan){
         //System.out.println("Entra a el void elegirGanador");
         for(Etapa aux :listaEtapa){
+            //PONGO FECHA ACTUAL ACA POR SI ELIGE DE A UNO AL GANADO SOLO COPIA Y PEGA , SE QUE CONSUME MAS RECURSOS
+            LocalDateTime fechaActual = LocalDateTime.now();
             if(aux.jerarquia==pisos){
                 //System.out.println("Entra al for de elegirGanador");
                 Participante p2Aux = aux.getP2();
@@ -176,7 +180,10 @@ public class Torneo {
                     }else{
                         System.out.println("Ingreso una opcion invalida");
                     }
+                    aux.setFechaGanador(fechaActual);
                 }else{
+
+                    aux.setFechaGanador(fechaActual);
                     aux.setGanador(aux.getP1());
                 }
             }else{
@@ -194,10 +201,11 @@ public class Torneo {
     public void pasarGanadorEtapa(){
         int tEtapaBaja = listaEtapa.size();
         setPisos(getPisos()-1);
+        LocalDateTime fechaActual = LocalDateTime.now();
         for(int i = 0 ; i < tEtapaBaja ; i= i+2){
             Etapa e1Aux = listaEtapa.get(i);
             Etapa e2Aux = listaEtapa.get(i+1);
-            listaEtapa.add(new Etapa(e1Aux.getGanador(),e2Aux.getGanador(), getPisos()));
+            listaEtapa.add(new Etapa(e1Aux.getGanador(),e2Aux.getGanador(), getPisos(),fechaActual));
         }
     }
     public void mostrarPorEtapa(Scanner scan){
