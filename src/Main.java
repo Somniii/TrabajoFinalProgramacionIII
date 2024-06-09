@@ -7,23 +7,23 @@ public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         fechaActualTest();
+        probarTorneo(scan);
     }
     public static void probarTorneo(Scanner scan){
-        Torneo torneito = new Torneo();
+        Torneo torneito = new Torneo("Lol");
         for (int id = 1; id <= 8; id++) {
             Participante participante = new Participante("Juan");
             torneito.ingresarParticipante(participante);
         }
         torneito.mostrarParticipantes();
         torneito.llenarEtapas();
-        /*torneito.mostrarEtapas();
+        while(torneito.getPisos()!=0){
+            torneito.elegirGanador(scan);
+        }
         torneito.mostrarPorEtapa(scan);
         torneito.elegirGanador(scan);
-        torneito.pasarGanadorEtapa();
         torneito.mostrarPorEtapa(scan);
-        torneito.elegirGanador(scan);
-        torneito.mostrarPorEtapa(scan);
-        torneito.mostrarGanador();*/
+        torneito.mostrarGanador();
         ArrayParticipantes participantesHistoricos = new ArrayParticipantes();
         participantesHistoricos.anadirParticipantes(torneito.getListaParticipante());
         participantesHistoricos.mostrarParticipantesHistoricos();

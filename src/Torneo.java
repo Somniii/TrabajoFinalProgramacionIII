@@ -159,37 +159,51 @@ public class Torneo {
         }
     }
     //Anda
+    public void verificarSiTerminoTorneo(){
+        if(pisos == 0){
+            System.out.println("No se pueden ver ganadores porque ya termino el torneo");
+        }
+    }
     public void elegirGanador( Scanner scan){
         //System.out.println("Entra a el void elegirGanador");
-        for(Etapa aux :listaEtapa){
-            //PONGO FECHA ACTUAL ACA POR SI ELIGE DE A UNO AL GANADO SOLO COPIA Y PEGA , SE QUE CONSUME MAS RECURSOS
-            LocalDateTime fechaActual = LocalDateTime.now();
-            if(aux.jerarquia==pisos){
-                //System.out.println("Entra al for de elegirGanador");
-                Participante p2Aux = aux.getP2();
-                if(p2Aux.getNombre()!=null){
-                    Participante p1 = aux.getP1();
-                    Participante p2 = aux.getP2();
-                    System.out.println("Elija ganador:\n1."+p1.getNombre()+"/VS/2."+p2.getNombre());
-                    System.out.println("Elije 1 o 2");
-                    int opcion = scan.nextInt();
-                    if(opcion == 1){
-                        aux.setGanador(aux.getP1());
-                    }else if(opcion == 2){
-                        aux.setGanador(aux.getP2());
+        if(pisos != 0){
+            for(Etapa aux :listaEtapa){
+                //PONGO FECHA ACTUAL ACA POR SI ELIGE DE A UNO AL GANADO SOLO COPIA Y PEGA , SE QUE CONSUME MAS RECURSOS
+                LocalDateTime fechaActual = LocalDateTime.now();
+                if(aux.jerarquia==pisos){
+                    //System.out.println("Entra al for de elegirGanador");
+                    Participante p2Aux = aux.getP2();
+                    if(p2Aux.getNombre()!=null){
+                        Participante p1 = aux.getP1();
+                        Participante p2 = aux.getP2();
+                        System.out.println("Elija ganador:\n1."+p1.getNombre()+"/VS/2."+p2.getNombre());
+                        System.out.println("Elije 1 o 2");
+                        int opcion = scan.nextInt();
+                        if(opcion == 1){
+                            aux.setGanador(aux.getP1());
+                        }else if(opcion == 2){
+                            aux.setGanador(aux.getP2());
+                        }else{
+                            System.out.println("Ingreso una opcion invalida");
+                        }
+                        aux.setFechaGanador(fechaActual);
                     }else{
-                        System.out.println("Ingreso una opcion invalida");
+
+                        aux.setFechaGanador(fechaActual);
+                        aux.setGanador(aux.getP1());
                     }
-                    aux.setFechaGanador(fechaActual);
                 }else{
 
-                    aux.setFechaGanador(fechaActual);
-                    aux.setGanador(aux.getP1());
                 }
-            }else{
-
             }
+            pasarGanadorEtapa();
+
         }
+        else{
+            System.out.println("YA EXISTE GANADOR DE TORNEO :ES:");
+            mostrarGanador();
+        }
+
     }
     //Anda
     public void mostrarGanador(){
@@ -223,5 +237,14 @@ public class Torneo {
 
         }
     }
+    public void mostrarGanadorTorneo(){
+        for(Etapa eAux : listaEtapa){
+            if(eAux.getJerarquia() == 0){
+                System.out.println("GANADOR TORNEO:\n"+eAux.toString());
+            }
+        }
+    }
+
+
 
 }
