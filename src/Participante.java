@@ -5,7 +5,7 @@ public class Participante {
     private String nombre;
     public Participante(){
         //Esta cuando sucede , ver si tiene nombre si no tiene nombre no existe (en torneo) (porque igual tiene id , hay que arreglar)
-        this.id = nextId;
+        this.id = 10;
     }
     public Participante(String nombre){
         this.id = nextId++;

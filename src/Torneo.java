@@ -6,10 +6,38 @@ public class Torneo {
     private List<Etapa> listaEtapa;
     private static int totalPisos;
     private int pisos;
+    private static int nextId = 30000000;
+    private final int id;
+    private String nombreTorneo;
 
     public Torneo() {
+        this.id = 30;
+    }
+    public Torneo(String nombreTorneo) {
         this.listaParticipante = new ArrayList<>();
         this.listaEtapa = new ArrayList<>();
+        this.id = nextId++;
+        this.nombreTorneo = nombreTorneo;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public static int getNextId() {
+        return nextId;
+    }
+
+    public static void setNextId(int nextId) {
+        Torneo.nextId = nextId;
+    }
+
+    public String getNombreTorneo() {
+        return nombreTorneo;
+    }
+
+    public void setNombreTorneo(String nombreTorneo) {
+        this.nombreTorneo = nombreTorneo;
     }
 
     public int getPisos() {
