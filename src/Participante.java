@@ -1,6 +1,5 @@
 public class Participante {
     private static int nextId = 10000000;
-
     private final int id;
     private String nombre;
     public Participante(){

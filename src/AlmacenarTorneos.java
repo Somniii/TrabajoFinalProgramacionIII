@@ -4,9 +4,20 @@ import java.util.List;
 public class AlmacenarTorneos {
     private List<Torneo> listaTorneos;
 
-    public AlmacenarTorneos(List<Torneo> listaTorneos) {
+    //CAMBIE ESTA FUNCION
+    public AlmacenarTorneos(){
         this.listaTorneos = new ArrayList<>();
     }
+    public AlmacenarTorneos(List<Torneo> listaTorneos) {
+        this.listaTorneos = listaTorneos;
+    }
+    //Antes no habia un constructor vacio de almacenarTorneos (Lo comento por si algo falla)
+    /*
+    Antes era:
+        public AlmacenarTorneos(List<Torneo> listaTorneos) {
+        this.listaTorneos = new ArrayList<>();
+    }
+     */
 
     public List<Torneo> getListaTorneos() {
         return new ArrayList<>(listaTorneos);

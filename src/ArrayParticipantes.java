@@ -6,6 +6,9 @@ public class ArrayParticipantes {
     public ArrayParticipantes(){
         this.listaParticipante = new ArrayList<>();
     }
+    public ArrayParticipantes(List<Participante> listaParticipante){
+        this.listaParticipante = listaParticipante;
+    }
 
     public List<Participante> getListaParticipante() {
         return new ArrayList<>(listaParticipante); // Regresa una copia de la lista
