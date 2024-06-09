@@ -1,5 +1,6 @@
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Scanner;
 public class Torneo {
     private List<Participante> listaParticipante;
     private List<Etapa> listaEtapa;
@@ -30,7 +31,7 @@ public class Torneo {
         listaParticipante.add(p1);
     }
     //Aniade todos los participantes a las etapas del torneo
-
+    //Funciona en el 90% de los casos , no funciona ej si ponemos 3 personas
     public void llenarEtapas(){
         double cantidadEtapas = listaParticipante.size()/2;
         int contador = 0;
@@ -54,18 +55,23 @@ public class Torneo {
             Participante aux1 = listaParticipante.get(i);
             Participante aux2 = new Participante();
             listaEtapa.add(new Etapa(aux1 ,aux2 , contador));
+            System.out.println("Coloca el id:"+aux1.getId());
             i++;
         }
         int j=i;
         for(Etapa eAux : listaEtapa){
             System.out.println("j"+j+"i"+i);
 
+
+            System.out.println("Pasa");
+            Participante pAux = listaParticipante.get(j);
+            System.out.println("Coloca el id:"+pAux.getId());
+            eAux.setP2(listaParticipante.get(j));
+
+            j++;
             if(j>listaParticipante.size()-1){
                 break;
             }
-            System.out.println("Pasa");
-            eAux.setP2(listaParticipante.get(j));
-            j++;
         }
     }
 
@@ -82,8 +88,36 @@ public class Torneo {
             for(Etapa eAux : listaEtapa){
                 Participante p1Aux = eAux.getP1();
                 Participante p2Aux = eAux.getP2();
-                System.out.println("Id:"+p1Aux.getId()+"|Id:"+p2Aux.getId());
+                System.out.println("Id:"+p1Aux.getId()+"|Id:"+p2Aux.getId()+"|Jerarquia:"+eAux.getJerarquia());
             }
+        }
+    }
+    public void elegirGanador( Scanner scan){
+        for(Etapa aux :listaEtapa){
+            if(aux.getP2()==null){
+                Participante p1 = aux.getP1();
+                Participante p2 = aux.getP2();
+                System.out.println("Elija ganador:\n1."+p1.getNombre()+"/VS/2."+p2.getNombre());
+                System.out.println("Elije 1 o 2");
+                int opcion = scan.nextInt();
+                if(opcion == 1){
+                    aux.setGanador(aux.getP1());
+                }else if(opcion == 2){
+                    aux.setGanador(aux.getP2());
+                }else{
+                    System.out.println("Ingreso una opcion invalida");
+                }
+            }else{
+                aux.setGanador(aux.getP1());
+            }
+
+
+        }
+    }
+    public void mostrarGanador(){
+        for(Etapa eAux : listaEtapa){
+            Participante pAux = eAux.getGanador();
+            System.out.println("El ganador fue: "+ pAux.getNombre());
         }
     }
 }
