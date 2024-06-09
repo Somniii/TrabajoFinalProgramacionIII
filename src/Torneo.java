@@ -97,7 +97,8 @@ public class Torneo {
         System.out.println("Entra a el void elegirGanador");
         for(Etapa aux :listaEtapa){
             System.out.println("Entra al for de elegirGanador");
-            if(aux.getP2()!=null){
+            Participante p2Aux = aux.getP2();
+            if(p2Aux.getNombre()!=null){
                 Participante p1 = aux.getP1();
                 Participante p2 = aux.getP2();
                 System.out.println("Elija ganador:\n1."+p1.getNombre()+"/VS/2."+p2.getNombre());
@@ -124,4 +125,5 @@ public class Torneo {
             System.out.println("El ganador fue: "+ pAux.getNombre());
         }
     }
+
 }
