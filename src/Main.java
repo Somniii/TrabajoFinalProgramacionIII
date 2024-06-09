@@ -22,14 +22,12 @@ public class Main {
             torneito.elegirGanador(scan);
         }
         torneito.mostrarGanadorTorneo();
-        torneito.mostrarEtapas();
         torneito.eliminarEtapaNegativa();
         torneito.mostrarEtapas();
         torneito.mostrarPorEtapa(scan);
-        torneito.mostrarPorEtapa(scan);
         ArrayParticipantes participantesHistoricos = new ArrayParticipantes();
         participantesHistoricos.anadirParticipantes(torneito.getListaParticipante());
-        participantesHistoricos.mostrarParticipantesHistoricos();
+        //participantesHistoricos.mostrarParticipantesHistoricos();
     }
     public static void fechaActualTest(){
         LocalDateTime fechaActual = LocalDateTime.now();

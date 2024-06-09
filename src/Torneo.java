@@ -269,7 +269,7 @@ public class Torneo {
         }
     }
     public void mostrarGanadorTorneo(){
-        System.out.println("GANADOR DEL TORNEO: "+ganadorTorneo.toString());
+        System.out.println("GANADOR DEL TORNEO:"+nombreTorneo+"\n"+ganadorTorneo.toString());
     }
     public void mostrarEtapasPorCargaDePiso(int buscar){
         for(Etapa eAux : listaEtapa){
