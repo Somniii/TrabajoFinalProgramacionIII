@@ -23,5 +23,8 @@ public class Participante {
     public int getId() {
         return id;
     }
+    public String toString(){
+        return "Id: "+id+"\nNombre: "+nombre;
+    }
 
 }
