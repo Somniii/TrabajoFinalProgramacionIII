@@ -110,6 +110,11 @@ public class Torneo {
     }
     //Aniade todos los participantes a las etapas del torneo
     //Funciona en el 90% de los casos , no funciona ej si ponemos 3 personas
+    /*NO FUNCIONA EN ESTOS CASOS: 
+    2 PARTICIPANTES 
+    3 PARTICIPANTES
+    5 PARTICIPANTES
+    */
     public void llenarEtapas(){
         double cantidadEtapas = listaParticipante.size()/2;
         int contador = 0;
