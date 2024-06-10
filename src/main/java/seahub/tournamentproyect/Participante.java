@@ -6,14 +6,14 @@ package seahub.tournamentproyect;
 
 public class Participante {
     private static int nextId = 10000000;
-    private final int id;
+    private final int idP;
     private String nombre;
     public Participante(){
         //Esta cuando sucede , ver si tiene nombre si no tiene nombre no existe (en torneo) (porque igual tiene id , hay que arreglar)
-        this.id = 10;
+        this.idP = 10;
     }
     public Participante(String nombre){
-        this.id = nextId++;
+        this.idP = nextId++;
         this.nombre = nombre;
     }
 
@@ -26,10 +26,10 @@ public class Participante {
     }
 
     public int getId() {
-        return id;
+        return idP;
     }
     public String toString(){
-        return "------------------------------\nId: "+id+"\nNombre: "+nombre;
+        return "------------------------------\nId: "+idP+"\nNombre: "+nombre;
     }
 
 
