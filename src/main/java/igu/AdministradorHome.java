@@ -8,12 +8,12 @@ package igu;
  *
  * @author tinov
  */
-public class HomeParticipante extends javax.swing.JFrame {
+public class AdministradorHome extends javax.swing.JFrame {
 
     /**
-     * Creates new form HomeParticipante
+     * Creates new form AdministradorHome
      */
-    public HomeParticipante() {
+    public AdministradorHome() {
         initComponents();
     }
 
