@@ -15,7 +15,7 @@ public class TournamentProyect {
     }
     public static void probarTorneo(Scanner scan){
         Torneo torneito = new Torneo("Lol");
-        for (int id = 1; id <= 8; id++) {
+        for (int id = 1; id <= 13; id++) {
             Participante participante = new Participante("Juan");
             torneito.ingresarParticipante(participante);
         }
