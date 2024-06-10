@@ -4,33 +4,31 @@
  */
 package seahub.tournamentproyect;
 
-public class Participante {
+public class Participante extends Persona{
     private static int nextId = 10000000;
     private final int idP;
-    private String nombre;
     public Participante(){
         //Esta cuando sucede , ver si tiene nombre si no tiene nombre no existe (en torneo) (porque igual tiene id , hay que arreglar)
         this.idP = 10;
     }
     public Participante(String nombre){
+        super(nombre);
         this.idP = nextId++;
-        this.nombre = nombre;
     }
-
-    public String getNombre() {
-        return nombre;
+    public Participante( String usuario, String contrasena, String nombre, String email) {
+        super(usuario, contrasena, nombre, email);
+        this.idP = nextId++;
     }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
+    
     public int getId() {
         return idP;
     }
-    public String toString(){
-        return "------------------------------\nId: "+idP+"\nNombre: "+nombre;
+
+    @Override
+    public String toString() {
+        return "Participante{" + "idP=" + idP + '}';
     }
+    
 
 
 }

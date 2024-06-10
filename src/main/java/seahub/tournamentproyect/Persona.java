@@ -16,10 +16,23 @@ public class Persona {
     private String nombre;
     private String email;
 
+    //Esto es si se crea una persona vacia
     public Persona() {
-        this.mainId = nextId++;
-        this.nombre = nombre;
+        this.mainId = 10;
     }
+    public Persona(String nombre){
+        this.nombre = nombre;
+        this.mainId = nextId++;
+    }
+    public Persona(String usuario, String contrasena, String nombre, String email) {
+        this.mainId = nextId++;
+        this.usuario = usuario;
+        this.contrasena = contrasena;
+        this.nombre = nombre;
+        this.email = email;
+    }
+    
+    
 
     public static int getNextId() {
         return nextId;
@@ -60,6 +73,12 @@ public class Persona {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public String toString() {
+        return "Persona{" + "mainId=" + mainId + ", usuario=" + usuario + ", contrasena=" + contrasena + ", nombre=" + nombre + ", email=" + email + '}';
+    }
+    
+    
 
     
 }

@@ -4,21 +4,23 @@
  */
 package seahub.tournamentproyect;
 
-public class Administrador {
+public class Administrador extends Persona{
     private static int nextId = 20000000;
-    private final int id;
-    private String nombre;
+    private final int idA;
     /*COMENTARIO:Esta clase administrador solo permite un torneo por un administrador , luego se puede cambiar pero solo uno
     Si la compania quiere realizar mas torneo la tenemos que cambiar por un List , pero en el MVP lo dejamos asi
     */
     public Administrador(){
-        this.id = 20;
-    }
-    public Administrador(String nombre){
-        this.id = nextId++;
-        this.nombre = nombre;
+        this.idA = 20;
     }
 
+    public Administrador(String usuario, String contrasena, String nombre, String email) {
+        super(usuario, contrasena, nombre, email);
+        this.idA = nextId++;
+
+    }
+    
+    
     public static int getNextId() {
         return nextId;
     }
@@ -28,21 +30,12 @@ public class Administrador {
     }
 
     public int getId() {
-        return id;
+        return idA;
     }
 
-    public String getNombre() {
-        return nombre;
+    @Override
+    public String toString() {
+        return "Administrador{" + "idA=" + idA + '}';
     }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-
-    public String toString(){
-        return "Nombre = "+nombre+"\nId:"+id;
-    }
-    
 
 }

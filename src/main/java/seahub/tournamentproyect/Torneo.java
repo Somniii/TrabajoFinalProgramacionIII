@@ -14,25 +14,25 @@ public class Torneo {
     private static int totalPisos;
     private int pisos;
     private static int nextId = 30000000;
-    private final int id;
+    private final int idT;
     private String nombreTorneo;
     private Administrador adm;
     private Participante ganadorTorneo;
 
     public Torneo() {
-        this.id = 30;
+        this.idT = 30;
     }
     public Torneo(String nombreTorneo) {
         this.listaParticipante = new ArrayList<>();
         this.listaEtapa = new ArrayList<>();
-        this.id = nextId++;
+        this.idT = nextId++;
         this.nombreTorneo = nombreTorneo;
         this.adm = new Administrador();
     }
     public Torneo(String nombreTorneo , Administrador adm){
         this.listaParticipante = new ArrayList<>();
         this.listaEtapa = new ArrayList<>();
-        this.id = nextId++;
+        this.idT = nextId++;
         this.nombreTorneo = nombreTorneo;
         this.adm = adm;
     }
@@ -54,7 +54,7 @@ public class Torneo {
     }
 
     public int getId() {
-        return id;
+        return idT;
     }
 
     public static int getNextId() {
