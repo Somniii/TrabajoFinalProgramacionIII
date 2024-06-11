@@ -6,12 +6,20 @@ package seahub.tournamentproyect;
 
 import java.util.Scanner;
 import java.time.LocalDateTime;
+import seahub.Igu.Login;
 
 public class TournamentProyect {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         fechaActualTest();
         probarTorneo(scan);
+        // Parte para crear la visual de Login
+        Login log = new Login();
+        // Hacer que pueda verse (Si esta en false no se muestra pero esta)
+        log.setVisible(true);
+        // Te centra la pantalla
+        log.setLocationRelativeTo(null);
+        
     }
     public static void probarTorneo(Scanner scan){
         Torneo torneito = new Torneo("Lol");
