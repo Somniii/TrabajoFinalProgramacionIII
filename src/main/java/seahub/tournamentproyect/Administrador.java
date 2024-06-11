@@ -4,9 +4,13 @@
  */
 package seahub.tournamentproyect;
 
-public class Administrador extends Persona{
+public class Administrador{
     private static int nextId = 20000000;
     private final int idA;
+    private String usuario;
+    private String contrasena;
+    private String nombre;
+    private String email;
     /*COMENTARIO:Esta clase administrador solo permite un torneo por un administrador , luego se puede cambiar pero solo uno
     Si la compania quiere realizar mas torneo la tenemos que cambiar por un List , pero en el MVP lo dejamos asi
     */
@@ -15,11 +19,14 @@ public class Administrador extends Persona{
     }
 
     public Administrador(String usuario, String contrasena, String nombre, String email) {
-        super(usuario, contrasena, nombre, email);
         this.idA = nextId++;
-
+        this.usuario = usuario;
+        this.contrasena = contrasena;
+        this.nombre = nombre;
+        this.email = email;
     }
-    
+
+
     
     public static int getNextId() {
         return nextId;
@@ -29,13 +36,47 @@ public class Administrador extends Persona{
         Administrador.nextId = nextId;
     }
 
-    public int getId() {
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public String getContrasena() {
+        return contrasena;
+    }
+
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getIdA() {
         return idA;
     }
 
     @Override
     public String toString() {
-        return "Administrador{" + "idA=" + idA + '}';
+        return "Administrador{" + "idA=" + idA + ", usuario=" + usuario + ", contrasena=" + contrasena + ", nombre=" + nombre + ", email=" + email + '}';
     }
+
+
 
 }

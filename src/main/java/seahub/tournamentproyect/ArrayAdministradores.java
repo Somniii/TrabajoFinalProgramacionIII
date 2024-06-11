@@ -27,7 +27,7 @@ public class ArrayAdministradores {
     public void anadirAdministradores(Administrador adm){
         int verificador = 1;
         for(Administrador lAux : listaAdministradores){
-            if(adm.getId() == lAux.getId()){
+            if(adm.getIdA() == lAux.getIdA()){
                 verificador = 0;
             }
         }
