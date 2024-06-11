@@ -1,29 +1,22 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 package seahub.tournamentproyect;
 
+import igu.Login;
 import java.util.Scanner;
 import java.time.LocalDateTime;
-import seahub.Igu.Login;
 
 public class TournamentProyect {
     public static void main(String[] args) {
+        System.out.println("Muestra esto");
+        Login login = new Login();
+        login.setVisible(true);
+        login.setLocationRelativeTo(null);
         Scanner scan = new Scanner(System.in);
         fechaActualTest();
         probarTorneo(scan);
-        // Parte para crear la visual de Login
-        Login log = new Login();
-        // Hacer que pueda verse (Si esta en false no se muestra pero esta)
-        log.setVisible(true);
-        // Te centra la pantalla
-        log.setLocationRelativeTo(null);
-        
     }
     public static void probarTorneo(Scanner scan){
         Torneo torneito = new Torneo("Lol");
-        for (int id = 1; id <= 13; id++) {
+        for (int id = 1; id <= 5; id++) {
             Participante participante = new Participante("Juan");
             torneito.ingresarParticipante(participante);
         }

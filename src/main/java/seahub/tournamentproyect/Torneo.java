@@ -14,29 +14,40 @@ public class Torneo {
     private static int totalPisos;
     private int pisos;
     private static int nextId = 30000000;
-    private final int id;
+    private final int idT;
     private String nombreTorneo;
     private Administrador adm;
     private Participante ganadorTorneo;
+    private boolean vigente = true;
+    //PONER FECHA CREACION
 
     public Torneo() {
-        this.id = 30;
+        this.idT = 30;
     }
     public Torneo(String nombreTorneo) {
         this.listaParticipante = new ArrayList<>();
         this.listaEtapa = new ArrayList<>();
-        this.id = nextId++;
+        this.idT = nextId++;
         this.nombreTorneo = nombreTorneo;
         this.adm = new Administrador();
     }
     public Torneo(String nombreTorneo , Administrador adm){
         this.listaParticipante = new ArrayList<>();
         this.listaEtapa = new ArrayList<>();
-        this.id = nextId++;
+        this.idT = nextId++;
         this.nombreTorneo = nombreTorneo;
         this.adm = adm;
     }
 
+    public boolean isVigente() {
+        return vigente;
+    }
+
+    public void setVigente(boolean vigente) {
+        this.vigente = vigente;
+    }
+
+    
     public Participante getGanadorTorneo() {
         return ganadorTorneo;
     }
@@ -54,7 +65,7 @@ public class Torneo {
     }
 
     public int getId() {
-        return id;
+        return idT;
     }
 
     public static int getNextId() {
@@ -110,6 +121,11 @@ public class Torneo {
     }
     //Aniade todos los participantes a las etapas del torneo
     //Funciona en el 90% de los casos , no funciona ej si ponemos 3 personas
+    /*NO FUNCIONA EN ESTOS CASOS: 
+    2 PARTICIPANTES 
+    3 PARTICIPANTES
+    5 PARTICIPANTES
+    */
     public void llenarEtapas(){
         double cantidadEtapas = listaParticipante.size()/2;
         int contador = 0;
@@ -202,9 +218,11 @@ public class Torneo {
                         if(pisos == 0){
                             if(opcion == 1){
                                 setGanadorTorneo(aux.getP1());
+                                vigente = false;
                             }
                             else if(opcion == 2){
                                 setGanadorTorneo(aux.getP2());
+                                vigente = false;
                             }
                             break;
                         }else{
@@ -238,7 +256,7 @@ public class Torneo {
         }
 
     }
-
+    
     public void pasarGanadorEtapa(){
         double tEtapaBaja = Math.pow(2,pisos);
         if(pisos == 0){
@@ -298,6 +316,9 @@ public class Torneo {
                 listaEtapa.remove(i); // Remove the element at the current index
             }
         }
+    }
+    public void terminarTorneo(){
+        vigente = false;
     }
 
 
