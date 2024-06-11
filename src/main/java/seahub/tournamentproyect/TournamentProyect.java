@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package logica;
+package seahub.tournamentproyect;
 
 import igu.Login;
 import java.util.Scanner;

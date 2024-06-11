@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package logica;
+package seahub.tournamentproyect;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -19,6 +19,7 @@ public class Torneo {
     private Administrador adm;
     private Participante ganadorTorneo;
     private boolean vigente = true;
+    //PONER FECHA CREACION
 
     public Torneo() {
         this.idT = 30;
