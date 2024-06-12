@@ -13,9 +13,9 @@ import javax.persistence.Id;
 public class TournamentProyect {
     public static void main(String[] args) {
         //System.out.println("Muestra esto");
-        //Login login = new Login();
-        //login.setVisible(true);
-        //login.setLocationRelativeTo(null);
+        Login login = new Login();
+        login.setVisible(true);
+        login.setLocationRelativeTo(null);
         Scanner scan = new Scanner(System.in);
         fechaActualTest();
         probarTorneo(scan);
