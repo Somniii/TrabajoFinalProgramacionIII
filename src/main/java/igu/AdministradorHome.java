@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package igu;
+import igu.ventas.CargaUser;
 import igu.ventas.*;
 /**
  *
@@ -64,6 +65,11 @@ public class AdministradorHome extends javax.swing.JFrame {
         jMenu2.add(revisarTorneo);
 
         terminarTorneo.setText("Terminar Torneo");
+        terminarTorneo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                terminarTorneoActionPerformed(evt);
+            }
+        });
         jMenu2.add(terminarTorneo);
 
         jMenuBar1.add(jMenu2);
@@ -97,11 +103,11 @@ public class AdministradorHome extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE)
         );
 
         pack();
@@ -125,6 +131,10 @@ public class AdministradorHome extends javax.swing.JFrame {
         ListaTorneos torneo = new ListaTorneos();
         torneo.setVisible(true);
     }//GEN-LAST:event_revisarTorneoActionPerformed
+
+    private void terminarTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_terminarTorneoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_terminarTorneoActionPerformed
 
     /**
      * @param args the command line arguments
