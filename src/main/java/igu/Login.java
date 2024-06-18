@@ -120,10 +120,6 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt2ActionPerformed
-
     private void txt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt1ActionPerformed
@@ -144,6 +140,10 @@ public class Login extends javax.swing.JFrame {
         registro.setVisible(true);
         registro.setLocationRelativeTo(null);
     }//GEN-LAST:event_btn2ActionPerformed
+
+    private void txt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt2ActionPerformed
 
     /**
      * @param args the command line arguments
