@@ -37,17 +37,24 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel1.setText("LOGIN");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 28, -1, -1));
 
         jLabel2.setText("usuario");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 62, -1, -1));
 
         txt1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt1ActionPerformed(evt);
             }
         });
+        jPanel1.add(txt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 96, 116, -1));
 
         jLabel3.setText("contrasena");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 130, -1, -1));
 
         btn1.setText("Iniciar Sesion");
         btn1.addActionListener(new java.awt.event.ActionListener() {
@@ -55,6 +62,7 @@ public class Login extends javax.swing.JFrame {
                 btn1ActionPerformed(evt);
             }
         });
+        jPanel1.add(btn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 212, -1, -1));
 
         btn2.setText("Registrarse");
         btn2.addActionListener(new java.awt.event.ActionListener() {
@@ -62,48 +70,14 @@ public class Login extends javax.swing.JFrame {
                 btn2ActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txt1, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel1)
-                    .addComponent(btn1)
-                    .addComponent(btn2)
-                    .addComponent(LoginPassword))
-                .addContainerGap(69, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(txt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(LoginPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(btn1)
-                .addGap(18, 18, 18)
-                .addComponent(btn2)
-                .addContainerGap(24, Short.MAX_VALUE))
-        );
+        jPanel1.add(btn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 253, -1, -1));
+        jPanel1.add(LoginPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 158, 116, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -120,7 +94,6 @@ public class Login extends javax.swing.JFrame {
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
         // TODO add your handling code here:
         String usuario =  txt1.getText();
-        String contrasena = txt2.getText();
         //TIENE QUE VER SI LOS DATOS DE USUARIO Y CONTRASENIA COINCIDEN CON ALGUN DATO DE USUARIO Y CONTRASENA DE LA BDD
         
         

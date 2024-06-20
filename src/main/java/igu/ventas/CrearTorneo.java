@@ -56,6 +56,7 @@ public class CrearTorneo extends javax.swing.JDialog {
         jLabel1.setText("Rellene los datos de su torneo a crear");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 370, 40));
 
+        jLabel2.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nombre del Torneo");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 120, -1));
@@ -68,11 +69,13 @@ public class CrearTorneo extends javax.swing.JDialog {
         jPanel1.add(NomTorneo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 220, -1));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Juego");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 60, -1));
         jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 220, -1));
 
+        jLabel4.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Cantidad de jugadores");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));

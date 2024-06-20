@@ -26,21 +26,51 @@ public class HomeParticipante extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        Titulo = new javax.swing.JLabel();
+        btnUnirseTorneo = new javax.swing.JButton();
+        btnRevisarTorneos = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Titulo.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
+        Titulo.setForeground(new java.awt.Color(255, 255, 255));
+        Titulo.setText("Bienvenido");
+        jPanel1.add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, -1, -1));
+
+        btnUnirseTorneo.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        btnUnirseTorneo.setText("Unirse al Torneo");
+        btnUnirseTorneo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUnirseTorneoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnUnirseTorneo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 200, 60));
+
+        btnRevisarTorneos.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        btnRevisarTorneos.setText("Revisar tus Torneos");
+        jPanel1.add(btnRevisarTorneos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 200, 60));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnUnirseTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUnirseTorneoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnUnirseTorneoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -48,5 +78,9 @@ public class HomeParticipante extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Titulo;
+    private javax.swing.JButton btnRevisarTorneos;
+    private javax.swing.JButton btnUnirseTorneo;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
